@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -28,7 +29,7 @@ public class Avdeling {
     @JoinColumn(name = "sjef_id")
     private Ansatt sjef;
 
-    @OneToMany(mappedBy = "avdeling")
+    @OneToMany(mappedBy = "avdeling", fetch = FetchType.EAGER)
     private List<Ansatt> ansatte;
 
     public Integer getId() { return id; }

@@ -8,6 +8,8 @@
 
         <class>com.example.Ansatt</class>
         <class>com.example.Avdeling</class>
+        <class>com.example.Prosjekt</class>
+        <class>com.example.Prosjektdeltagelse</class>
         
         <properties>
             <!-- Generelle JPA properties -->
