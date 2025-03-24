@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence" 
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+             xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd" 
+             version="2.1">		
+              
+    <persistence-unit name="oblig3PU" transaction-type="RESOURCE_LOCAL">
+
+        <class>com.example.Ansatt</class>
+        
+        <properties>
+            <!-- Generelle JPA properties -->
+            <property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver"/>
+            <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://ider-database.westeurope.cloudapp.azure.com:5433/h187456"/>
+            <property name="javax.persistence.jdbc.user" value="h187456"/>
+            <property name="javax.persistence.jdbc.password" value="187456PASS"/>
+            
+            <!-- Hibernate properties -->
+            <property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQLDialect"/>
+            <property name="hibernate.hbm2ddl.auto" value="update"/>
+            <property name="hibernate.show_sql" value="true"/>
+            <property name="hibernate.format_sql" value="true"/>
+            
+            <!-- Fjern EclipseLink properties om du bruker Hibernate -->
+        </properties>
+        
+    </persistence-unit>
+</persistence>
