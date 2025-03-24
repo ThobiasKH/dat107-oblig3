@@ -7,6 +7,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -33,10 +35,13 @@ public class Ansatt {
     @Column(name = "stilling")
     private String stilling;
 
-    @Column(name = "lonn")
+    @Column(name = "manedslonn")
     private Double lonn;
 
-    // Getters and Setters
+    @ManyToOne
+    @JoinColumn(name = "avdeling_id")
+    private Avdeling avdeling;
+
     public Integer getId() {
         return id;
     }
@@ -93,7 +98,9 @@ public class Ansatt {
         this.lonn = lonn;
     }
 
-    // Method to print employee details
+    public Avdeling getAvdeling() { return avdeling; }
+    public void setAvdeling(Avdeling avdeling) { this.avdeling = avdeling; }
+
     public void printAnsattDetaljer() {
         System.out.println("Ansatt ID: " + id);
         System.out.println("Brukernavn: " + brukernavn);
@@ -101,5 +108,10 @@ public class Ansatt {
         System.out.println("Ansettelsesdato: " + ansettelsesdato);
         System.out.println("Stilling: " + stilling);
         System.out.println("Lønn: " + lonn);
+        if(avdeling != null) {
+            System.out.println("Avdeling: " + avdeling.getNavn());
+        } else {
+            System.out.println("Avdeling: Ikke satt");
+        }
     }
 }
