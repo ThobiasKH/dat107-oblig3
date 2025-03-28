@@ -1,2 +1,10 @@
-com\example\Ansatt.class
-com\example\Main.class
+com/example/AvdelingDAO.class
+com/example/MainTestAvdeling.class
+com/example/Avdeling.class
+com/example/Ansatt.class
+com/example/ProsjektDAO.class
+com/example/Prosjekt.class
+com/example/Prosjektdeltagelse.class
+com/example/Main.class
+com/example/ProsjektdeltagelseDAO.class
+com/example/AnsattDAO.class
